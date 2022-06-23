@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'index.js') }}"></script>
+    <style>
+        #header {
+            font-size: 40px;
+            display: flex;
+            justify-content: left;
+            padding-top: 30px;
+            height: 100px;
+        }
+
+        .zero_padding {
+            padding: 0px;
+        }
+
+        #upload_row {
+            padding: 20px;
+        }
+
+        #uploadbutton {
+            width: 100%;
+        }
+
+        .navbar-brand {
+            font-size: 30px;
+        }
+
+        .navbartext {
+            font-size: 20px;
+        }
+
+        #warning {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success_msg {
+            color:green;
+        }
+
+        #tasksRowText {
+            font-size: 25px;
+            display: flex;
+            justify-content: left;
+            padding-top: 20px;
+            height: 80px;
+        } */
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <a class="navbar-brand" href="#">ReferenceFinder!</a>
+            <ul class="navbar-nav">
+                <li class="nav-item active navbartext">
+                    <a class="nav-link" href="bookmark_selection_page.html">Upload/View All Bookmarks</a>
+                </li>
+                <li class="nav-item navbartext">
+                    <a class="nav-link" href="../">How to get Chrome Bookmarks?</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Upload Chrome Bookmarks File -->
+        <div class="row col-md-12" id="upload_row">
+            <div class="row col-md-2">
+                <!-- <button type="button" class="btn btn-primary" id="upload_button">Upload Chrome Bookmarks HTML File</button> -->
+                <form action="/upload.php" method="POST" enctype="multipart/form-data">
+                    <div>
+                        <input type="file" name="files" multiple />
+                        <input type="submit" value="Submit" />
+                    </div>
+                </form>
+            </div>
+            <div class="row col-md-4 zero_padding"></div>
+            <div class="row col-md-2">
+                <button type="button" class="btn btn-primary" id="tutorial_button">Get Chrome Bookmarks</button>
+            </div>
+            <div class="row col-md-2 zero_padding"></div>
+            <div class="row col-md-2">
+                <button type="button" class="btn btn-success" id="new_proj_button">Create New Project!</button>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="row col-md-12">
+            <div class="col-md-12" id="header">Search Bookmarks By Tag</div>
+            <div class="input-group">
+                <!-- <div class="form-outline"> -->
+                  <input type="search" id="form1" class="form-control" />
+                  <label class="form-label" for="form1"></label>
+                <!-- </div> -->
+                <button type="button" class="btn btn-primary" id="searchBtn">Search
+                  <!-- <i class="fas fa-search"></i> -->
+                </button>
+              </div>
+              <div class="row col-md-12" id="image_card_display_row"></div>
+        </div>
+
+        <!-- Projects Header -->
+        <div class="row">
+            <div class="col-md-12" id="header">All Bookmarks</div>
+        </div>
+
+        <!-- Display Projects Row -->
+        <div class="row col-md-12" id="display_row"></div>
+    </div>
+</body>
+</html>

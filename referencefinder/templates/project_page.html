@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'project_page.js') }}"></script>
+    <style>
+        
+        #header {
+            font-size: 40px;
+            /* background-color: */
+            display: flex;
+            justify-content: left;
+            padding-top: 40px;
+            height: 100px;
+        }
+
+        .zero_padding {
+            padding: 0px;
+        }
+
+        #submitrow {
+            padding-top: 10px;
+        }
+
+        #submitbox {
+            width: 100%;
+            height: 40px;
+        }
+
+        #submitbutton {
+            width: 100%;
+        }
+
+        .changeItem {
+            font-size: 20px;
+            padding-top: 5px;
+        }
+
+        #warning {
+            color: red;
+            font-weight: bold;
+        }
+
+        .searchresult {
+            border-radius: 10%;
+            border-color: 2px light grey;
+        }
+
+        #tasksRowText {
+            font-size: 25px;
+            display: flex;
+            justify-content: left;
+            padding-top: 20px;
+            height: 80px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <!--To Do List Header-->
+        <div class="row">
+            <div class="col-md-12" id="header">To Do List!</div>
+        </div>
+        <!--Tasks For Today! Text-->
+        <div class="row col-md-12" id="tasksRowText">
+            Tasks for today!
+        </div>
+        <!--Previous To Dos-->
+        <div class="row col-md-12" id="tasksRow"></div>
+    </div>
+</body>
+</html>
